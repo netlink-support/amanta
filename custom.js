@@ -24,11 +24,11 @@ jQuery(document).ready(function ($) {
     var slides = [
         {
             src: "public/assets/images/home-banner-1.jpg",
-            title: "Innovating for Healthier Tomorrows.",
+            title: "Its all about life !",
         },
         {
             src: "public/assets/images/home-banner-2.jpg",
-            title: "Innovating for Healthier Tomorrows.",
+            title: "Its all about life !",
         },
     ];
     // Initialize Vegas slider
