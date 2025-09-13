@@ -312,3 +312,57 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    var currentPath = globalThis.location.pathname.toLowerCase();
+    console.log("Current path:", currentPath);
+
+    // Extract base path (e.g. "/amanta-2024") dynamically
+    var basePath = "";
+    if (currentPath.startsWith("/amanta-2024")) {
+        basePath = "/amanta-2024";
+    }
+    console.log("Base path:", basePath);
+
+    // Map subpages to parent slugs (without base path)
+    var parentMap = {
+        "/board-of-directors": "/about-us",
+        "/life-at-amanta": "/about-us",
+        "/disclosure-under-regulation-46-of-sebi-regulations-2015": "/investors",
+        "/exchange-announcements": "/investors",
+        "/material-documents": "/investors",
+        "/offer-document": "/investors",
+        "/corporate-governance": "/investors",
+        "/annual-returns": "/investors",
+        "/annual-report": "/investors",
+        "/audited-financial-report": "/investors",
+        "/policies": "/investors",
+        "/board-committees-management": "/investors"
+    };
+
+    // Default: use current path
+    var targetPath = currentPath;
+
+    // Check if current path matches any subpage
+    $.each(parentMap, function (subPath, parentPath) {
+        if (currentPath.startsWith(basePath + subPath)) {
+            targetPath = basePath + parentPath;
+        }
+    });
+
+    console.log("Target path for highlight:", targetPath);
+
+    // Highlight correct nav item
+    $('.header-menu-fixd ul li a').each(function () {
+        var linkPath = new URL(this.href, globalThis.location.origin).pathname.toLowerCase();
+        console.log("Checking link:", linkPath);
+
+        if (linkPath === targetPath) {
+            $(this).parent('li').addClass('active');
+            $(this).closest('.dropdown-mega').addClass('active');
+        }
+    });
+});
+
+
+
