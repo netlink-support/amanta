@@ -21,17 +21,43 @@ window.addEventListener("load", toggleHeaderClass);
 
 /* home-slider */
 jQuery(document).ready(function ($) {
+
     var slides = [
-        {
-            src: "public/assets/images/home-banner-1.jpg",
-            title: "Its all about life!",
-        },
-        {
-            src: "public/assets/images/home-banner-2.jpg",
-            title: "Its all about life!",
-        },
+        { src: "public/assets/images/home-banner-1.jpg", title: "Its all about life!" },
+        { src: "public/assets/images/home-banner-2.jpg", title: "Its all about life!" },
+        { src: "public/assets/images/home-banner-3.jpg", title: "New manufacturing capabilities" },
+        { src: "public/assets/images/home-banner-4.jpg", title: "Upgraded quality control lab and research & development lab" }
     ];
-    // Initialize Vegas slider
+
+    function updateSlide(index, slide) {
+
+        const $title = $("#slider-title");
+
+        $title.removeClass("highlight-slide");
+        $title.html(slide.title);
+
+        if (index === 2) {
+            $title.addClass("highlight-slide");
+            $title.html(`
+            <span>New manufacturing</span><br>
+            <span>capabilities</span>   
+            `);
+        }
+
+        else if (index === 3) {
+            $title.addClass("highlight-slide");
+            $title.html(`
+                <span>Upgraded quality control lab</span><br>
+                <span>and research & development lab</span>
+            `);
+            $(".header-menu-overlap").hide();
+        }
+
+        else {
+            $(".header-menu-overlap").show();
+        }
+    }
+
     $("#homeTopSlider").vegas({
         slides: slides,
         overlay: true,
@@ -41,13 +67,16 @@ jQuery(document).ready(function ($) {
         delay: 5000,
         animationDuration: 18000,
         walk: function (index, slide) {
-            // Update the title dynamically when the slide changes
-            $("#slider-title").text(slide.title);
-        },
+            updateSlide(index, slide);
+        }
     });
-    // Set initial title
-    $("#slider-title").text(slides[0].title);
+
+    // 🔥 Initial slide properly set
+    updateSlide(0, slides[0]);
+
 });
+
+
 /* end-home-slider */
 
 /* map */
@@ -363,6 +392,5 @@ $(document).ready(function () {
         }
     });
 });
-
 
 
