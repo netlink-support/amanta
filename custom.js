@@ -42,6 +42,7 @@ jQuery(document).ready(function ($) {
             <span>New manufacturing</span><br>
             <span>capabilities</span>   
             `);
+             $(".header-menu-overlap").hide();
         }
 
         else if (index === 3) {
