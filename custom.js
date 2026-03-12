@@ -42,7 +42,7 @@ jQuery(document).ready(function ($) {
             <span>New manufacturing</span><br>
             <span>capabilities</span>   
             `);
-             $(".header-menu-overlap").hide();
+            $(".header-menu-overlap").hide();
         }
 
         else if (index === 3) {
@@ -358,7 +358,6 @@ $(document).ready(function () {
     var parentMap = {
         "/board-of-directors": "/about-us",
         "/life-at-amanta": "/about-us",
-        "/disclosure-under-regulation-46-and-62-of-SEBI-regulations-2015": "/investors",
         "/exchange-announcements": "/investors",
         "/material-documents": "/investors",
         "/offer-document": "/investors",
@@ -367,7 +366,9 @@ $(document).ready(function () {
         "/annual-report": "/investors",
         "/audited-financial-report": "/investors",
         "/policies": "/investors",
-        "/board-committees-management": "/investors"
+        "/board-committees-management": "/investors",
+        "/investor-meet": "/investors",
+        "/disclosure-under-regulation-46-and-62-of-sebi-regulations-2015": "/investors"
     };
 
     // Default: use current path
