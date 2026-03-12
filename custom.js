@@ -358,7 +358,7 @@ $(document).ready(function () {
     var parentMap = {
         "/board-of-directors": "/about-us",
         "/life-at-amanta": "/about-us",
-        "/disclosure-under-regulation-46-of-SEBI-regulations-2015": "/investors",
+        "/disclosure-under-regulation-46-and-62-of-SEBI-regulations-2015": "/investors",
         "/exchange-announcements": "/investors",
         "/material-documents": "/investors",
         "/offer-document": "/investors",
