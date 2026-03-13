@@ -25,8 +25,12 @@ jQuery(document).ready(function ($) {
     var slides = [
         { src: "public/assets/images/home-banner-1.jpg", title: "Its all about life!" },
         { src: "public/assets/images/home-banner-2.jpg", title: "Its all about life!" },
-        { src: "public/assets/images/home-banner-3.jpg", title: "New manufacturing capabilities" },
-        { src: "public/assets/images/home-banner-4.jpg", title: "Upgraded quality control lab and research & development lab" }
+        { src: "public/assets/images/home-banner-3-c1.jpg", title: "New manufacturing capabilities" },
+        { src: "public/assets/images/home-banner-3-c2.jpg", title: "New manufacturing capabilities" },
+        { src: "public/assets/images/home-banner-3-c3.jpg", title: "New manufacturing capabilities" },
+        { src: "public/assets/images/home-banner-4-a1.jpg", title: "Development Centre" },
+        { src: "public/assets/images/home-banner-4-a2.jpg", title: "Development Centre" },
+        { src: "public/assets/images/home-banner-4-a3.jpg", title: "Development Centre" }
     ];
 
     function updateSlide(index, slide) {
@@ -36,20 +40,21 @@ jQuery(document).ready(function ($) {
         $title.removeClass("highlight-slide");
         $title.html(slide.title);
 
-        if (index === 2) {
+        // Banner 3 group (index 2,3,4)
+        if (index >= 2 && index <= 4) {
             $title.addClass("highlight-slide");
             $title.html(`
-            <span>New manufacturing</span><br>
-            <span>capabilities</span>   
+                <span>New manufacturing</span><br>
+                <span>capabilities</span>
             `);
             $(".header-menu-overlap").hide();
         }
 
-        else if (index === 3) {
+        // Banner 4 group (index 5,6,7)
+        else if (index >= 5 && index <= 7) {
             $title.addClass("highlight-slide");
             $title.html(`
-                <span>Upgraded quality control lab</span><br>
-                <span>and research & development lab</span>
+                <span>Development Centre</span>
             `);
             $(".header-menu-overlap").hide();
         }
