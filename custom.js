@@ -25,9 +25,9 @@ jQuery(document).ready(function ($) {
     var slides = [
         { src: "public/assets/images/home-banner-1.jpg", title: "Its all about life!" },
         { src: "public/assets/images/home-banner-2.jpg", title: "Its all about life!" },
-        { src: "public/assets/images/home-banner-3-c1.jpg", title: "New Manufacturing capabilities" },
-        { src: "public/assets/images/home-banner-3-c2.jpg", title: "New Manufacturing capabilities" },
-        { src: "public/assets/images/home-banner-3-c3.jpg", title: "New Manufacturing capabilities" },
+        { src: "public/assets/images/home-banner-3-c1.jpg", title: "New Manufacturing Capabilities" },
+        { src: "public/assets/images/home-banner-3-c2.jpg", title: "New Manufacturing Capabilities" },
+        { src: "public/assets/images/home-banner-3-c3.jpg", title: "New Manufacturing Capabilities" },
         { src: "public/assets/images/home-banner-4-a1.jpg", title: "Development Centre" },
         { src: "public/assets/images/home-banner-4-a2.jpg", title: "Development Centre" },
         { src: "public/assets/images/home-banner-4-a3.jpg", title: "Development Centre" }
@@ -45,7 +45,7 @@ jQuery(document).ready(function ($) {
             $title.addClass("highlight-slide");
             $title.html(`
                 <span>New Manufacturing</span><br>
-                <span>capabilities</span>
+                <span>Capabilities</span>
             `);
             $(".header-menu-overlap").hide();
         }
