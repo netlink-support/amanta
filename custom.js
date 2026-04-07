@@ -25,38 +25,49 @@ jQuery(document).ready(function ($) {
     var slides = [
         { src: "public/assets/images/home-banner-1.jpg", title: "Its all about life!" },
         { src: "public/assets/images/home-banner-2.jpg", title: "Its all about life!" },
-        { src: "public/assets/images/home-banner-3-c1.jpg", title: "New Manufacturing Capabilities" },
-        { src: "public/assets/images/home-banner-3-c2.jpg", title: "New Manufacturing Capabilities" },
-        { src: "public/assets/images/home-banner-3-c3.jpg", title: "New Manufacturing Capabilities" },
+        { src: "public/assets/images/home-banner-3-nw-c1.jpg", title: "New Manufacturing Capabilities" },
+        { src: "public/assets/images/home-banner-3-nw-c2.jpg", title: "New Manufacturing Capabilities" },
+        { src: "public/assets/images/home-banner-3-nw-c3.jpg", title: "New Manufacturing Capabilities" },
+        { src: "public/assets/images/home-banner-4-nw-a1.jpg", title: "Development Centre" },
         { src: "public/assets/images/home-banner-4-a1.jpg", title: "Development Centre" },
-        { src: "public/assets/images/home-banner-4-a2.jpg", title: "Development Centre" },
         { src: "public/assets/images/home-banner-4-a3.jpg", title: "Development Centre" }
     ];
 
     function updateSlide(index, slide) {
 
         const $title = $("#slider-title");
+        const $header = $(".header-menu-fixd"); // header class
 
         $title.removeClass("highlight-slide");
+        $header.removeClass("header-invert"); // reset
+
         $title.html(slide.title);
 
-        // Banner 3 group (index 2,3,4)
+        // Banner 3 group
         if (index >= 2 && index <= 4) {
             $title.addClass("highlight-slide");
+
             $title.html(`
                 <span>New Manufacturing</span><br>
                 <span>Capabilities</span>
             `);
+
             $(".header-menu-overlap").hide();
+
+            $header.addClass("header-invert"); // 🔥 add white header
         }
 
-        // Banner 4 group (index 5,6,7)
+        // Banner 4 group
         else if (index >= 5 && index <= 7) {
             $title.addClass("highlight-slide");
+
             $title.html(`
                 <span>Development Centre</span>
             `);
+
             $(".header-menu-overlap").hide();
+
+            $header.addClass("header-invert"); // 🔥 add white header
         }
 
         else {
@@ -399,5 +410,4 @@ $(document).ready(function () {
         }
     });
 });
-
 
